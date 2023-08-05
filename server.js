@@ -22,6 +22,11 @@ app.use(express.static(path.join(__dirname, 'public/build')));
 dotenv.config()
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+app.get("/", (req, res) => {
+    res.send("Hello World!")
+    console.log("Hello World!");
+})
+
 app.post("/pay", async (req, res) => {
     console.log(req.body.token.id);
     const purchaseData = await stripe.charges.create({
