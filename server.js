@@ -12,12 +12,12 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-    origin: "https://bazaronline.onrender.com/",
+    origin: 'https://bazaronline.onrender.com',
     credentials: true,
-    optionsSuccessStatus: 20
+    optionsSuccessStatus: 200,
 }))
 
-app.use(express.static(path.join(__dirname, 'public/build')));
+// app.use(express.static(path.join(__dirname, 'public/build')));
 
 dotenv.config()
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
