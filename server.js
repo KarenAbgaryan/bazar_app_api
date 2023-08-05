@@ -16,7 +16,7 @@ app.use(cors({
     optionsSuccessStatus: 20
 }))
 
-app.use(express.static(path.join(__dirname, 'server/public/build')));
+app.use(express.static(path.join(__dirname, 'public/build')));
 
 dotenv.config()
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
