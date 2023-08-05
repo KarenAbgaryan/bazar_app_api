@@ -12,7 +12,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-    origin: 'https://bazaronline-api.onrender.com',
+    origin: 'https://bazaronline.onrender.com',
     credentials: true,
     optionsSuccessStatus: 200,
 }))
