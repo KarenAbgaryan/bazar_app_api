@@ -6,6 +6,7 @@ import bodyParser from 'body-parser'
 import path from 'path'
 
 const __dirname = path.resolve();
+const PORT = process.env.PORT || 8000
 
 const app = express()
 app.use(bodyParser.json())
@@ -32,6 +33,6 @@ app.post("/pay", async (req, res) => {
 })
 
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 })
