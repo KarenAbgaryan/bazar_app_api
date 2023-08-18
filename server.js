@@ -28,7 +28,6 @@ app.get("/", (req, res) => {
 })
 
 app.post("/pay", async (req, res) => {
-    console.log(req.body.token.id);
     const purchaseData = await stripe.charges.create({
         source: req.body.token.id,
         amount: req.body.amount,
